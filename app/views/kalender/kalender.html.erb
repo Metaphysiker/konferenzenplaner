@@ -1,0 +1,10 @@
+Event-Kalender<br>
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<div id="kalender">
+  <%= render 'kalender/fullkalendar' %>
+</div>
