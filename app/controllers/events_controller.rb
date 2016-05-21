@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :find_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
+  before_action :iscurrentuserallowed?, only: [:edit, :update, :destroy]
 
 
   def index
@@ -67,4 +68,9 @@ def find_eventcreate
   @event = Event.find(params[:event_id])
 end
 
+def iscurrentuserallowed?
+  if !current_user.id == @event.user_id
+    redirect_to root_path
+  end
+end
 

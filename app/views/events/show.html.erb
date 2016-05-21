@@ -1,3 +1,7 @@
 <%= @event.title %><br>
 <%= @event.description %><br>
-Tags: <%= @event.tag_list %>
+<% zahl = @event.id %>
+Tags: <%= @event.tag_list %><br>
+Termin-Möglichkeiten: <br>
+<br>
+Möglichkeit hinzufügen: <%= link_to "Contribute", maker_path(zahl,10), :method => :post %>

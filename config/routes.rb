@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'pages/info'
+  post ':event_id/possibilities(.:format)/:number' => 'possibilities#create', as: 'maker'
+
+
 
   get 'kalender', to: 'kalender#kalender', as: 'kalender'
 
+  resources :possibilities
   resources :meetings
-  resources :events
+  resources :events do
+    resources :date_events
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
