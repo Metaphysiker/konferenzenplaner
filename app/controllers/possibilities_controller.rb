@@ -12,7 +12,7 @@ class PossibilitiesController < ApplicationController
       @possibility.number = params[:number]
 
       if @possibility.save
-        redirect_to new_event_date_event_path(params[:event_id])
+        redirect_to eventicer_path(params[:event_id],@possibility.id)
       else
         render 'new'
       end

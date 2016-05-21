@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'pages/info'
   post ':event_id/possibilities(.:format)/:number' => 'possibilities#create', as: 'maker'
 
-
+  get ':event_id/possibilities(.:format)/' => 'date_events#new', as: 'eventicer'
 
   get 'kalender', to: 'kalender#kalender', as: 'kalender'
 
