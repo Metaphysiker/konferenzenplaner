@@ -7,12 +7,10 @@ class PossibilitiesController < ApplicationController
 
     def create
       @possibility = Possibility.new
-      @possibility.user_id = current_user.id
       @possibility.event_id = params[:event_id]
-      @possibility.number = params[:number]
 
       if @possibility.save
-        redirect_to eventicer_path(params[:event_id],@possibility.id)
+        redirect_to new_event_possibility_date_event_path(params[:event_id],@possibility)
       else
         render 'new'
       end
