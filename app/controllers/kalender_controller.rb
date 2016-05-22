@@ -1,8 +1,16 @@
 class KalenderController < ApplicationController
 
   def kalender
+
+    @tag = params[:search_input]
+    if @tag.nil? || @tag.empty?
+      @events = Event.all
+    else
+      @events = Event.tagged_with(params[:search_input])
+    end
+
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @events = Event.all
+
     @first_calendar_day = @date.beginning_of_month.beginning_of_week(:monday)
     @last_calendar_day = @date.end_of_month.end_of_week(:monday)
     @weeks = (@first_calendar_day..@last_calendar_day).to_a.in_groups_of(7)

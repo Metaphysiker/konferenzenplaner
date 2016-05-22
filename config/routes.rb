@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post '/confirm/:possibility_id' => 'possibilities#confirm', as: 'confirm'
 
+  get "/kalender/search" => 'kalender#kalender'
+
   resources :meetings
   resources :events do
     resources :possibilities

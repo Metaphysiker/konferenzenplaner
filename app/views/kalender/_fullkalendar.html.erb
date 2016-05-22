@@ -1,4 +1,15 @@
-
+<div style="text-align: center">
+  <%= form_tag("/kalender/search", method: "get") do %>
+      <%= label_tag(:search_input, "Suche:") %>
+      <%= text_field_tag(:search_input) %>
+      <%= submit_tag("kalender_search") %>
+  <% end %>
+</div><br>
+<% @events.each do |event| %>
+    <%= event.title %> <%=event.tag_list %><br>
+<% end %>
+<br>
+<br>
 <%= "#{@date.strftime("%B")} #{@date.year}" %></h1><br>
 <div class="green">
   Grüner Hintergrund bedeutet: Termin findet definitiv an diesem Tag statt!
@@ -9,9 +20,9 @@
 <br>
 <%= link_to "Event hinzufügen", new_event_path %><br><br>
 <div class="userview">
-  <%= link_to "Früher ", kalender_path(date: @date - 1.month), remote:true %>
+  <%= link_to "Früher ", kalender_path(date: @date - 1.month, search_input: params[:search_input]), remote:true %>
   <%= "#{@date.strftime("%B")} #{@date.year}" %>
-  <%= link_to " Später ", kalender_path(date: @date + 1.month), remote:true %>
+  <%= link_to " Später ", kalender_path(date: @date + 1.month, search_input: params[:search_input]), remote:true %>
 </div>
 <br>
 <table class="calendar">

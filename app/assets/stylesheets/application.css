@@ -20,14 +20,20 @@ th { border-bottom: 1px solid #DDD; }
 
 .blue{
     background: #5fa0ee;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .green{
     background: #2fee31;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .red{
     background: #ee5714;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .jesus{
