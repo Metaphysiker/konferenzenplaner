@@ -18,6 +18,14 @@ footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 
+.blue{
+    background: #5fa0ee;
+}
+
+.green{
+    background: #2fee31;
+}
+
 .jesus{
     align: center;
     display: inline-block;

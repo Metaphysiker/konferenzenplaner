@@ -2,5 +2,11 @@
 <%= @event.description %><br>
 Tags: <%= @event.tag_list %><br>
 Termin-Möglichkeiten: <br>
+<% @event.possibilities.each do |poss| %>
+    <%= poss.id %><br>
+    <% poss.date_events.each do |date| %>
+        <%= date.date %><br>
+    <% end %><br><br>
+<% end %>
 <br>
 Möglichkeit hinzufügen: <%= link_to "Contribute", event_possibilities_path(@event), :method => :post %>
