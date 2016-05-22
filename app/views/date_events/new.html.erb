@@ -3,7 +3,7 @@
 <input type="text" class='datepicker' >
 <br>
 
-<%= simple_form_for([@possibility, @dateevent, url: new_event_possibility_date_event_path]) do |f| %>
+<%= simple_form_for([@possibility, @dateevent]) do |f| %>
     <%= hidden_field_tag(:date) %>
     <%= f.input :date, :as => :hidden, :input_html => { :value => "placeholder" } %>
     <%= f.button :submit %>

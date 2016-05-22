@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails konferenzenplaner: development" uuid="9239557d-c382-4df8-8b52-3dc5b321f197">
+      <first-sync>true</first-sync>
+      <user-name>sandroraess</user-name>
+      <user-password>dffddfc5dfd8dfd8dfc3dfc4dfcddfcfdfc4df9b</user-password>
+    </data-source>
+    <data-source name="Rails konferenzenplaner: production" uuid="9da80fdf-d269-4775-8818-2e2f49bdc057">
+      <user-name>konferenzenplaner</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe1dfe5dfe4dfecdfefdff8dfefdfe4dff0dfefdfe4dffadfe6dfebdfe4dfefdff8dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+    <data-source name="Rails konferenzenplaner: test" uuid="248a13eb-d874-48dc-99fa-bbea694c2031">
+      <user-name>sandroraess</user-name>
+      <user-password>dffddfc5dfd8dfd8dfc3dfc4dfcddfcfdfc4df9b</user-password>
+    </data-source>
+  </component>
+</project>

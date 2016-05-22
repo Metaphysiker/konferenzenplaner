@@ -10,10 +10,11 @@ class PossibilitiesController < ApplicationController
       @possibility.event_id = params[:event_id]
 
       if @possibility.save
-        redirect_to new_event_possibility_date_event_path(params[:event_id],@possibility)
+
       else
         render 'new'
       end
+      redirect_to new_possibility_date_event_path(@possibility)
     end
 
     def update

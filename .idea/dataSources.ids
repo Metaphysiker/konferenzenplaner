@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails konferenzenplaner: development" uuid="9239557d-c382-4df8-8b52-3dc5b321f197">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails konferenzenplaner: production" uuid="9da80fdf-d269-4775-8818-2e2f49bdc057">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails konferenzenplaner: test" uuid="248a13eb-d874-48dc-99fa-bbea694c2031">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

@@ -9,10 +9,13 @@ Rails.application.routes.draw do
 
   resources :meetings
   resources :events do
-    resources :possibilities do
-      resources :date_events
-      end
+    resources :possibilities
   end
+
+  resources :possibilities do
+    resources :date_events
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
