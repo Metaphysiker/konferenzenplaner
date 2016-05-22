@@ -1,0 +1,6 @@
+Meine Events<br><br>
+<div class="container">
+<% @events.each do |event| %>
+  <%= link_to event.title, event_path(event) %> <br>
+<% end %>
+</div>

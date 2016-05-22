@@ -1,12 +1,25 @@
 <%= @event.title %><br>
 <%= @event.description %><br>
 Tags: <%= @event.tag_list %><br>
-Termin-Möglichkeiten: <br>
-<% @event.possibilities.each do |poss| %>
-    <%= poss.id %><br>
+Termin-Möglichkeiten: <br><br>
+<% i = 1 %>
+<% @possibilities.each do |poss| %>
+    <% if allnotconfirmed?(@event) %>
+        <div class ="blue">
+          <% elsif poss.confirmed == true %>
+        <div class ="green">
+          <%= link_to "Rückgängig machen?", confirm_path(poss), :method => :post %><br>
+          <% else %>
+        <div class ="red">
+          <% end %>
+    Möglichkeit <%= i %>:<br>
+    <% i = i + 1 %>
+    <% if allnotconfirmed?(@event) %>
+    <%= link_to "Event bestätigen?", confirm_path(poss), :method => :post %><br>
+        <% end %>
     <% poss.date_events.each do |date| %>
         <%= date.date %><br>
-    <% end %><br><br>
+    <% end %></div><br><br>
 <% end %>
 <br>
 Möglichkeit hinzufügen: <%= link_to "Contribute", event_possibilities_path(@event), :method => :post %>

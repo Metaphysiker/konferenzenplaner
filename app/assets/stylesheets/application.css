@@ -26,6 +26,10 @@ th { border-bottom: 1px solid #DDD; }
     background: #2fee31;
 }
 
+.red{
+    background: #ee5714;
+}
+
 .jesus{
     align: center;
     display: inline-block;

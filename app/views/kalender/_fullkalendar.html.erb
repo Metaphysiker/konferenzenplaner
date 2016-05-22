@@ -1,6 +1,11 @@
 
-<h1>Events vom <%= "#{@date.strftime("%B")} #{@date.year}" %></h1>
-
+<%= "#{@date.strftime("%B")} #{@date.year}" %></h1><br>
+<div class="green">
+  Grüner Hintergrund bedeutet: Termin findet definitiv an diesem Tag statt!
+</div><br>
+<div class="blue">
+  Blauer Hintergrund bedeutet: Termin findet möglicherweise an diesem Tag statt.
+</div>
 <br>
 <%= link_to "Event hinzufügen", new_event_path %><br><br>
 <div class="userview">
@@ -26,13 +31,15 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
-                                  <% if poss.confirmed == false %>
-                                      <div class="blue"%>
-                                  <%= event.title %></div>
-                                      <% else %>
+                                  <% if poss.confirmed == true %>
                                       <div class="green"%>
                                         <%= event.title %></div>
-                                      <% end %>
+                                      <% elsif allnotconfirmed?(event) %>
+                                      <div class="blue"%>
+                                        <%= event.title %></div>
+                                      <% else%>
+
+                                  <% end %>
                                   <br>
                               <% end %>
                           <% end %>
@@ -46,12 +53,14 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
-                                  <% if poss.confirmed == false %>
-                                      <div class="blue"%>
-                                        <%= event.title %></div>
-                                  <% else %>
+                                  <% if poss.confirmed == true %>
                                       <div class="green"%>
                                         <%= event.title %></div>
+                                  <% elsif allnotconfirmed?(event) %>
+                                      <div class="blue"%>
+                                        <%= event.title %></div>
+                                  <% else%>
+
                                   <% end %>
                                   <br>
                               <% end %>

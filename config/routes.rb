@@ -7,10 +7,14 @@ Rails.application.routes.draw do
 
   get 'kalender', to: 'kalender#kalender', as: 'kalender'
 
+  post '/confirm/:possibility_id' => 'possibilities#confirm', as: 'confirm'
+
   resources :meetings
   resources :events do
     resources :possibilities
   end
+
+  get 'myevents' => 'events#myevents', as: 'myevents'
 
   resources :possibilities do
     resources :date_events

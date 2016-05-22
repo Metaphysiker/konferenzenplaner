@@ -1,7 +1,7 @@
 class PossibilitiesController < ApplicationController
     before_action :find_possibility, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
-    before_action :iscurrentuserallowed?, only: [:edit, :update, :destroy]
+
 
 
 
@@ -15,6 +15,19 @@ class PossibilitiesController < ApplicationController
         render 'new'
       end
       redirect_to new_possibility_date_event_path(@possibility)
+    end
+
+    def confirm
+      @possibility = Possibility.find(params[:possibility_id])
+      if @possibility.confirmed == true
+        @possibility.confirmed = false
+        @possibility.save
+        redirect_to kalender_path
+        else
+          @possibility.confirmed = true
+          @possibility.save
+          redirect_to kalender_path
+      end
     end
 
     def update
@@ -32,7 +45,6 @@ class PossibilitiesController < ApplicationController
 
   end
 
-
   private
 
   def possibility_params
@@ -43,8 +55,3 @@ class PossibilitiesController < ApplicationController
     @possibility = Possibility.find(params[:id])
   end
 
-  def iscurrentuserallowed?
-    if !current_user.id == @possibility.user_id
-      redirect_to root_path
-    end
-  end

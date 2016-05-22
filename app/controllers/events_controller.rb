@@ -3,13 +3,16 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
   before_action :iscurrentuserallowed?, only: [:edit, :update, :destroy]
 
+  def myevents
+    @events = Event.where(user_id: current_user.id)
+  end
 
   def index
     @events = Event. all
   end
 
   def show
-
+    @possibilities = Possibility.where(event_id: @event.id).order(:id)
   end
 
   def new
@@ -49,6 +52,14 @@ class EventsController < ApplicationController
 
 end
 
+def allnotconfirmed?(event)
+  event.possibilities.each do |poss|
+    if poss.confirmed == true
+      return false
+    end
+  end
+  return true
+end
 
 private
 
