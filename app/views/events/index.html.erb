@@ -3,4 +3,10 @@ Alle Konferenzen<br><br>
 <% @events.each do |event| %>
       <%= event.title %><br>
       <%= event.description %><br>
+      <% event.possibilities.each do |poss| %>
+        <%= poss.id %><br>
+          <% poss.date_events.each do |date| %>
+            <%= date.date %>
+            <% end %><br>
+      <% end %>
 <% end %>
