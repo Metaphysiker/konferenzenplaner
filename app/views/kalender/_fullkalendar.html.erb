@@ -2,13 +2,34 @@
   <%= form_tag("/kalender/search", method: "get") do %>
       <%= label_tag(:search_input, "Suche:") %>
       <%= text_field_tag(:search_input) %>
-      <%= submit_tag("kalender_search") %>
+      <%= submit_tag("Kalender Suche") %>
   <% end %>
 </div><br>
+<br>
 <% @events.each do |event| %>
     <%= event.title %> <%=event.tag_list %><br>
 <% end %>
 <br>
+<div class="container">
+  <h2>Dropdowns</h2>
+  <p>The .dropdown class is used to indicate a dropdown menu.</p>
+  <p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
+  <p>To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle="dropdown".</p>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+      <% if @tag.nil? %>
+          Kategorie auswählen
+          <% else %>
+            <%= @tag %>
+          <% end %>
+      <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Logik ", kalender_path(date: @date, search_input: "Logik"), remote:true %></li>
+      <li><%= link_to "Metaphysik ", kalender_path(date: @date, search_input: "Metaphysik"), remote:true %></li>
+      <li><%= link_to "Ethik ", kalender_path(date: @date, search_input: "Ethik"), remote:true %></li>
+    </ul>
+  </div>
+</div>
 <br>
 <%= "#{@date.strftime("%B")} #{@date.year}" %></h1><br>
 <div class="green">
