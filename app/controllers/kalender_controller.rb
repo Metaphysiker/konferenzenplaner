@@ -3,7 +3,7 @@ class KalenderController < ApplicationController
   def kalender
     @tags = ["Logik", "Metaphysik", "Ethik"]
     @tag = params[:search_input]
-    if @tag.nil? || @tag.empty?
+    if @tag.nil? || @tag.empty? || @tag == "Alle Events"
       @events = Event.all
     else
       @events = Event.tagged_with(params[:search_input])
