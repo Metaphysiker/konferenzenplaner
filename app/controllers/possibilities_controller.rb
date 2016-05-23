@@ -8,6 +8,14 @@ class PossibilitiesController < ApplicationController
     def create
       @possibility = Possibility.new
       @possibility.event_id = params[:event_id]
+      event = Event.find(params[:event_id])
+      if event.possibilities.nil?
+        @possibility.number = 1
+      else
+        poss = Possibility.where(event_id: params[:event_id]).order(:number)
+        @possibility.number = poss.first.number + 1
+      end
+      @possibility.number = event.possibilities.length + 1
 
       if @possibility.save
 

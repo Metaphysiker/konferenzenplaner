@@ -76,6 +76,7 @@
                                           <div class="pop-up">
                                             <h3><%= event.title %></h3>
                                             <%= event.description %><br>
+                                            <%= poss.number %><br>
                                             <% konflikte = konflikt?(event, poss) %>
                                             <% konflikte.each do |konflikt| %>
                                                 <%=konflikt %><br>
@@ -86,7 +87,9 @@
                                       <div class="blue"%>
                                         <%= event.title %></div>
                                           <div class="pop-up">
-                                            <h3><%= event.title %></h3>
+                                            <h5><%= event.title %></h5>
+                                            <%= poss.number %>. Möglichkeit<br><br>
+                                            Beschreibung: <br>
                                             <%= event.description %><br>
                                             <% konflikte = konflikt?(event, poss) %>
                                             <% konflikte.each do |konflikt| %>
