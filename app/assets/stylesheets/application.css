@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-body { padding-top: 100px; }
+body { padding-top: 70px; }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
@@ -36,9 +36,11 @@ th { border-bottom: 1px solid #DDD; }
     padding: 5px;
 }
 
-.jesus{
+.moses{
     align: center;
     display: inline-block;
+    padding:10px;
+    margin-left: -280px;
 }
 
 /* HOVER STYLES */
