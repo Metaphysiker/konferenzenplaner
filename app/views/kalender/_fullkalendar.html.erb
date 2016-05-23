@@ -71,10 +71,15 @@
                                   <br><div class="trigger">
                                   <% if poss.confirmed == true %>
                                       <div class="green"%>
-                                        <%= event.title %></div>
+                                        <%= event.title %>
+                                      </div>
                                           <div class="pop-up">
                                             <h3><%= event.title %></h3>
-                                            <%= event.description %>
+                                            <%= event.description %><br>
+                                            <% konflikte = konflikt?(event, poss) %>
+                                            <% konflikte.each do |konflikt| %>
+                                                <%=konflikt %><br>
+                                            <% end %>
                                           </div>
                                           </div>
                                     <% elsif allnotconfirmed?(event) %>
@@ -82,7 +87,11 @@
                                         <%= event.title %></div>
                                           <div class="pop-up">
                                             <h3><%= event.title %></h3>
-                                            <%= event.description %>
+                                            <%= event.description %><br>
+                                            <% konflikte = konflikt?(event, poss) %>
+                                            <% konflikte.each do |konflikt| %>
+                                                <%=konflikt %><br>
+                                            <% end %>
                                           </div>
                                           </div>
                                   <% else%>

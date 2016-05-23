@@ -19,4 +19,15 @@ class KalenderController < ApplicationController
     @eventics = Event.joins(:date_events).where('extract(month from date_events.date) = ?', @date.month).where(published: true)
     @alldays = (@first_calendar_day..@last_calendar_day)
   end
+
+
 end
+
+
+
+def test
+  return true
+end
+
+
+
