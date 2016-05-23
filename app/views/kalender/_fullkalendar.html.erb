@@ -68,12 +68,23 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
+                                  <br><div class="trigger">
                                   <% if poss.confirmed == true %>
                                       <div class="green"%>
                                         <%= event.title %></div>
-                                  <% elsif allnotconfirmed?(event) %>
+                                          <div class="pop-up">
+                                            <h3><%= event.title %></h3>
+                                            <%= event.description %>
+                                          </div>
+                                          </div>
+                                    <% elsif allnotconfirmed?(event) %>
                                       <div class="blue"%>
                                         <%= event.title %></div>
+                                          <div class="pop-up">
+                                            <h3><%= event.title %></h3>
+                                            <%= event.description %>
+                                          </div>
+                                          </div>
                                   <% else%>
 
                                   <% end %>
