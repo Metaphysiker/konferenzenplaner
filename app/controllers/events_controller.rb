@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def show
     @possibilities = Possibility.where(event_id: @event.id).order(:id)
+    @events = Event. all
   end
 
   def new

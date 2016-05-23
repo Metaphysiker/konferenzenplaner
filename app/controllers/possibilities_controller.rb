@@ -9,7 +9,7 @@ class PossibilitiesController < ApplicationController
       @possibility = Possibility.new
       @possibility.event_id = params[:event_id]
       event = Event.find(params[:event_id])
-      if event.possibilities.nil?
+      if event.possibilities.length == 0
         @possibility.number = 1
       else
         poss = Possibility.where(event_id: params[:event_id]).order(:number)

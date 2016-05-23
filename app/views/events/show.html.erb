@@ -12,14 +12,24 @@ Termin-Möglichkeiten: <br><br>
           <% else %>
         <div class ="red">
           <% end %>
-    Möglichkeit <%= i %>:<br>
-    <% i = i + 1 %>
-    <% if allnotconfirmed?(@event) %>
-    <%= link_to "Event bestätigen?", confirm_path(poss), :method => :post %><br>
+    <table>
+      <td>
+        Möglichkeit <%= poss.number %>:<br>
+        <% if allnotconfirmed?(@event) %>
+            <%= link_to "Event bestätigen?", confirm_path(poss), :method => :post %><br>
         <% end %>
-    <% poss.date_events.each do |date| %>
-        <%= date.date %><br>
-    <% end %></div><br><br>
+        <% poss.date_events.each do |date| %>
+            <%= date.date %><br>
+        <% end %>
+      </td>
+      <td>
+        <% konflikte = konflikt?(@event, poss) %>
+        <% konflikte.each do |konflikt| %>
+            <%=konflikt %><br>
+        <% end %>
+      </td>
+    </table>
+</div><br><br>
 <% end %>
 <br>
 Möglichkeit hinzufügen: <%= link_to "Contribute", event_possibilities_path(@event), :method => :post %>
