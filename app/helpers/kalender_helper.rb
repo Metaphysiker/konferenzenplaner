@@ -27,7 +27,8 @@ module KalenderHelper
           databaseposs.date_events.each do |databasedate|
             if event != databaseevent
               if datum.date == databasedate.date
-                konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.to_s)
+                #konflikte.push("Konflikt mit " + databaseevent.title.to_s )
+                konflikte.push(databaseevent)
               end
             end
           end

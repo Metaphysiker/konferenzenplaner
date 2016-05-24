@@ -40,10 +40,10 @@ Tags: <%= @event.tag_list %>
             <% datumkonflikt = konfliktdate?(@event, poss, date) %>
             <%= date.date %> |
             <% datumkonflikt.each do |konf| %>
-                <%= konf %> |
+                Konflikt mit: <%= link_to konf.title, event_path(konf) %> |
                 <% end %><br>
         <% end %>
 </div><br><br>
 <% end %>
 <br>
-Möglichkeit hinzufügen: <%= link_to "Contribute", event_possibilities_path(@event), :method => :post %>
+<%= link_to "Möglichkeit hinzufügen", event_possibilities_path(@event), :method => :post %>
