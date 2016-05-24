@@ -56,7 +56,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to calendar_show_path
+    redirect_to myevents_path
   end
 
 end
@@ -89,7 +89,7 @@ def find_eventcreate
 end
 
 def iscurrentuserallowed?
-  if !current_user.id == @event.user_id
+  if current_user.id != @event.user_id
     redirect_to root_path
   end
 end

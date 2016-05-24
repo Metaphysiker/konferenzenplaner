@@ -1,0 +1,15 @@
+<%= event.title %>
+<% if !current_user.nil? && event.user_id == current_user.id %>
+    <div class="smallwhite"> </div>
+<% end %>
+</div>
+<div class="pop-up">
+  <h5><%= event.title %></h5>
+  <%= poss.number %>. Möglichkeit<br><br>
+  Beschreibung: <br>
+  <%= event.description %><br>
+  <% konflikte = konflikt?(event, poss) %>
+  <% konflikte.each do |konflikt| %>
+      <%=konflikt %><br>
+  <% end %>
+</div>

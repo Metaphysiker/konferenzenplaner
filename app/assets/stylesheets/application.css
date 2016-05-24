@@ -35,6 +35,15 @@ th { border-bottom: 1px solid #DDD; }
     border-radius: 5px;
     padding: 5px;
 }
+.smallwhite{
+    align: right;
+    border-radius: 2px;
+    padding: 5px;
+    background: white;
+    hight: 10px;
+    width: 2px;
+    display: inline-block;
+}
 
 .moses{
     align: center;
@@ -113,16 +122,6 @@ table.indextable{
     margin: 6px;
 }
 
-.erstesblau a{
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.erstesblau a:hover{
-    color: #bdbdbd;
-    text-decoration: none;
-}
-
 .zweitesblau{
     text-align: center;
     background-color: #1f4dff;
@@ -132,15 +131,6 @@ table.indextable{
     padding-bottom: 5px;
 }
 
-.zweitesblau a{
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.zweitesblau a:hover{
-    color: #bdbdbd;
-    text-decoration: none;
-}
 
 .drittesblau{
     text-align: center;

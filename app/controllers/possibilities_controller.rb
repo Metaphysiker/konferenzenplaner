@@ -1,8 +1,7 @@
 class PossibilitiesController < ApplicationController
     before_action :find_possibility, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
-
-
+    before_action :cancurrentuserconfirm?, only: :confirm
 
 
     def create
@@ -48,7 +47,7 @@ class PossibilitiesController < ApplicationController
 
     def destroy
       @possibility.destroy
-      redirect_to root_path
+      redirect_to event_path(Event.find(@possibility.event_id))
     end
 
   end
@@ -63,3 +62,12 @@ class PossibilitiesController < ApplicationController
     @possibility = Possibility.find(params[:id])
   end
 
+def cancurrentuserconfirm?
+
+  @possibility = Possibility.find(params[:possibility_id])
+  event = Event.find(@possibility.event_id)
+  userid = event.user_id
+  if current_user.id != event.user_id
+    redirect_to root_path
+  end
+end

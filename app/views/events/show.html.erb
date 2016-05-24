@@ -1,7 +1,10 @@
-<%= @event.title %><br>
-<%= @event.description %><br>
+<h2><%= @event.title %></h2><br>
+<h3><%= @event.description %></h3><br>
 Tags: <%= @event.tag_list %>
 <br>
+<% if !current_user.nil? && current_user.id == @event.user_id %>
+<%= link_to "Event bearbeiten", edit_event_path(@event) %> | <%= link_to "Event löschen", event_path(@event), method: :delete, data: { confirm: "Sind sie sicher?" }%>
+    <% end %><br>
 <table>
   <td style="min-width: 200px;">Termin-Möglichkeiten:</td>
   <td><div class="container">
@@ -28,13 +31,17 @@ Tags: <%= @event.tag_list %>
         <div class ="blue">
           <% elsif poss.confirmed == true %>
         <div class ="green">
+          <% if !current_user.nil? && current_user.id == @event.user_id %>
           <%= link_to "Rückgängig machen?", confirm_path(poss), :method => :post %><br>
+        <%end %>
           <% else %>
         <div class ="red">
           <% end %>
-        Möglichkeit <%= poss.number %>:<br>
+        <h2>Möglichkeit <%= poss.number %>:<br></h2>
         <% if allnotconfirmed?(@event) %>
+        <% if !current_user.nil? && current_user.id == @event.user_id %>
             <%= link_to "Event bestätigen?", confirm_path(poss), :method => :post %><br>
+            <% end %>
         <% end %>
         <% poss.date_events.each do |date| %>
             <% datumkonflikt = konfliktdate?(@event, poss, date) %>
@@ -43,6 +50,9 @@ Tags: <%= @event.tag_list %>
                 Konflikt mit: <%= link_to konf.title, event_path(konf) %> |
                 <% end %><br>
         <% end %>
+    <% if !current_user.nil? && current_user.id == @event.user_id %>
+        <%= link_to "Möglichkeit löschen", possibility_path(poss), method: :delete, data: { confirm: "Sind sie sicher?" }%>
+    <% end %><br>
 </div><br><br>
 <% end %>
 <br>
