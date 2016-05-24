@@ -54,9 +54,10 @@ th { border-bottom: 1px solid #DDD; }
 
 /* HOVER STYLES */
 div.pop-up {
+    text-align: center;
     display: none;
     position: absolute;
-    width: 280px;
+    width: 400px;
     padding: 10px;
     background: #eeeeee;
     color: #000000;

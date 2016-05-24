@@ -101,7 +101,7 @@
                                             <h3><%= event.title %></h3>
                                             <%= poss.number %>. Möglichkeit<br><br>
                                             Beschreibung: <br>
-                                            <%= event.description %><br>
+                                            <%= event.description %><br><br>
                                             <% konflikte = konflikt?(event, poss) %>
                                             <% konflikte.each do |konflikt| %>
                                                 <%=konflikt %><br>
