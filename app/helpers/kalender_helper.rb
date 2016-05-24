@@ -9,7 +9,13 @@ module KalenderHelper
             databaseposs.date_events.each do |databasedate|
               if event != databaseevent
                 if date.date == databasedate.date
-                  konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.to_s)
+                 if allnotconfirmed?(databaseevent)
+                   konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.to_s)
+                  elsif databaseposs.confirmed == true
+                   konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.to_s)
+                 else
+
+                 end
                 end
               end
             end
