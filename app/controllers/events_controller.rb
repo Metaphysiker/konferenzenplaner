@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   before_action :iscurrentuserallowed?, only: [:edit, :update, :destroy]
 
   def myevents
+
     @events = Event.where(user_id: current_user.id)
   end
 
@@ -13,7 +14,14 @@ class EventsController < ApplicationController
 
   def show
     @possibilities = Possibility.where(event_id: @event.id).order(:id)
-    @events = Event. all
+
+    @tags = ["Logik", "Metaphysik", "Ethik"]
+    @tag = params[:search_input]
+    if @tag.nil? || @tag.empty? || @tag == "Alle Events"
+      @events = Event.all
+    else
+      @events = Event.tagged_with(params[:search_input])
+    end
   end
 
   def new

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/confirm/:possibility_id' => 'possibilities#confirm', as: 'confirm'
 
   get "/kalender/search" => 'kalender#kalender'
+  get "/event/search" => 'kalender#show'
 
   resources :meetings
   resources :events do

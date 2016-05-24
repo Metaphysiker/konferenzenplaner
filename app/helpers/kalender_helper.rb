@@ -19,4 +19,21 @@ module KalenderHelper
     return konflikte
   end
 
+  def konfliktdate?(event, possibility, datum)
+
+    konflikte = Array.new
+      @events.each do |databaseevent|
+        databaseevent.possibilities.each do |databaseposs|
+          databaseposs.date_events.each do |databasedate|
+            if event != databaseevent
+              if datum.date == databasedate.date
+                konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.to_s)
+              end
+            end
+          end
+        end
+      end
+    return konflikte
+  end
+
 end

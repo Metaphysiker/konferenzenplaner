@@ -1,8 +1,28 @@
 <%= @event.title %><br>
 <%= @event.description %><br>
-Tags: <%= @event.tag_list %><br>
-Termin-Möglichkeiten: <br><br>
-<% i = 1 %>
+Tags: <%= @event.tag_list %>
+<br>
+<table>
+  <td style="min-width: 200px;">Termin-Möglichkeiten:</td>
+  <td><div class="container">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        <% if @tag.nil? %>
+            Kategorie auswählen
+        <% else %>
+            <%= @tag %>
+        <% end %>
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Logik ", event_path(date: @date, search_input: "Logik") %></li>
+        <li><%= link_to "Metaphysik ", event_path(date: @date, search_input: "Metaphysik") %></li>
+        <li><%= link_to "Ethik ", event_path(date: @date, search_input: "Ethik") %></li>
+        <li><%= link_to "Alle Events ", event_path(date: @date, search_input: "Alle Events")%></li>
+      </ul>
+    </div>
+  </div></td>
+</table>
+ <br><br>
 <% @possibilities.each do |poss| %>
     <% if allnotconfirmed?(@event) %>
         <div class ="blue">
@@ -12,23 +32,17 @@ Termin-Möglichkeiten: <br><br>
           <% else %>
         <div class ="red">
           <% end %>
-    <table>
-      <td>
         Möglichkeit <%= poss.number %>:<br>
         <% if allnotconfirmed?(@event) %>
             <%= link_to "Event bestätigen?", confirm_path(poss), :method => :post %><br>
         <% end %>
         <% poss.date_events.each do |date| %>
-            <%= date.date %><br>
+            <% datumkonflikt = konfliktdate?(@event, poss, date) %>
+            <%= date.date %> |
+            <% datumkonflikt.each do |konf| %>
+                <%= konf %> |
+                <% end %><br>
         <% end %>
-      </td>
-      <td>
-        <% konflikte = konflikt?(@event, poss) %>
-        <% konflikte.each do |konflikt| %>
-            <%=konflikt %><br>
-        <% end %>
-      </td>
-    </table>
 </div><br><br>
 <% end %>
 <br>
