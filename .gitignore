@@ -101,4 +101,6 @@ $RECYCLE.BIN/
 *.msp
 
 # Windows shortcuts
-*.lnk
+*.lnkpublic/uploads
+tmp
+logs
