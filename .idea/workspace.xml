@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4728c65-aee1-4c4d-a099-2aac9dfeb1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/kalender_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/kalender_helper.rb" />
     </list>
     <ignored path="konferenzenplaner.iws" />
@@ -43,8 +42,8 @@
       <file leaf-file-name="kalender_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers/kalender_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+            <state relative-caret-position="210">
+              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -714,12 +713,12 @@
       <workItem from="1463869188360" duration="36475000" />
       <workItem from="1463955526774" duration="2705000" />
       <workItem from="1463959850255" duration="16528000" />
-      <workItem from="1464031525151" duration="17410000" />
+      <workItem from="1464031525151" duration="17884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93822000" />
+    <option name="totallyTimeSpent" value="94296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="24" width="1313" height="744" extended-state="6" />
@@ -1155,8 +1154,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/kalender_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        <state relative-caret-position="210">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
           <folding />
         </state>
       </provider>

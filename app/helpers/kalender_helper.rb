@@ -33,8 +33,13 @@ module KalenderHelper
           databaseposs.date_events.each do |databasedate|
             if event != databaseevent
               if datum.date == databasedate.date
-                #konflikte.push("Konflikt mit " + databaseevent.title.to_s )
-                konflikte.push(databaseevent)
+                if allnotconfirmed?(databaseevent)
+                  konflikte.push(databaseevent)
+                elsif databaseposs.confirmed == true
+                  konflikte.push(databaseevent)
+                else
+
+                end
               end
             end
           end
