@@ -49,15 +49,46 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
-                                  <% if poss.confirmed == true %>
-                                      <div class="green"%>
-                                        <%= event.title %></div>
-                                      <% elsif allnotconfirmed?(event) %>
-                                      <div class="blue"%>
-                                        <%= event.title %></div>
-                                      <% else%>
+                                  <br><div class="trigger">
+                  <% if poss.confirmed == true %>
+                      <div class="green"%>
+                        <%= link_to event.title, event_path(event) %>
+                        <% if !current_user.nil? && event.user_id == current_user.id %>
+                            <div class="smallwhite"> </div>
+                        <% end %>
+                      </div>
+                      <div class="pop-up">
+                        <h3><%= event.title %></h3>
+                        <%= poss.number %>. Möglichkeit<br><br>
+                        Beschreibung: <br>
+                        <%= event.description %><br>
+                        <% konflikte = konflikt?(event, poss) %>
+                        <% konflikte.each do |konflikt| %>
+                            <%=konflikt %><br>
+                        <% end %>
+                      </div>
+                      </div>
+                  <% elsif allnotconfirmed?(event) %>
+                      <div class="blue"%>
+                        <%= link_to event.title, event_path(event) %>
+                        <% if !current_user.nil? && event.user_id == current_user.id %>
+                            <div class="smallwhite"> </div>
+                        <% end %>
+                      </div>
+                      <div class="pop-up">
+                        <h3><%= event.title %></h3>
+                        <%= poss.number %>. Möglichkeit<br><br>
+                        Beschreibung: <br>
+                        <%= event.description %><br><br>
+                        <% konflikte = konflikt?(event, poss) %>
+                        <% konflikte.each do |konflikt| %>
+                            <%=konflikt %><br>
+                        <% end %>
+                      </div>
+                      </div>
+                  <% else%>
 
-                                  <% end %>
+                  <% end %>
                                   <br>
                               <% end %>
                           <% end %>
@@ -74,7 +105,7 @@
                                   <br><div class="trigger">
                                   <% if poss.confirmed == true %>
                                       <div class="green"%>
-                                        <%= event.title %>
+                                        <%= link_to event.title, event_path(event) %>
                                         <% if !current_user.nil? && event.user_id == current_user.id %>
                                             <div class="smallwhite"> </div>
                                         <% end %>
@@ -92,7 +123,7 @@
                                           </div>
                                     <% elsif allnotconfirmed?(event) %>
                                       <div class="blue"%>
-                                         <%= event.title %>
+                                        <%= link_to event.title, event_path(event) %>
                                           <% if !current_user.nil? && event.user_id == current_user.id %>
                                               <div class="smallwhite"> </div>
                                           <% end %>

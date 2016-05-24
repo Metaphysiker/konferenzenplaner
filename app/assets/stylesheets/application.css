@@ -18,6 +18,27 @@ footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 
+/* unvisited link */
+a:link {
+    color: #0d0000;
+}
+
+/* visited link */
+a:visited {
+    color: #1f3380;
+}
+
+/* mouse over link */
+a:hover {
+    color: #edfffc;
+    background-color: transparent;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
 .blue{
     background: #5fa0ee;
     border-radius: 5px;
