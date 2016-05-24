@@ -16,7 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'simple_form'
 gem 'devise'
 gem 'acts-as-taggable-on'
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
 
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails'
