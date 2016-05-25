@@ -17,9 +17,7 @@ Tags: <%= @event.tag_list %>
         <% end %>
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <% @categories.each do |category| %>
-        <li><%= link_to category.name, event_path(date: @date, search_input: "Logik") %></li>
-            <% end %>
+        <li><%= link_to "Logik", event_path(date: @date, search_input: "Logik") %></li>
       </ul>
     </div>
   </div></td>
