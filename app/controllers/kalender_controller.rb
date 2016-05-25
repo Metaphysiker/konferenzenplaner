@@ -1,6 +1,7 @@
 class KalenderController < ApplicationController
 
   def kalender
+    @categories = Group.all
     @tags = ["Logik", "Metaphysik", "Ethik"]
     @tag = params[:search_input]
     if @tag.nil? || @tag.empty? || @tag == "Alle Events"

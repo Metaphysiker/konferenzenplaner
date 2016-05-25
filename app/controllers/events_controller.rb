@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @categories = Group.all
     @possibilities = Possibility.where(event_id: @event.id).order(:id)
 
     @tags = ["Logik", "Metaphysik", "Ethik"]
