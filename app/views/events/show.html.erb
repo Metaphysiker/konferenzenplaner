@@ -45,7 +45,7 @@ Tags: <%= @event.tag_list %>
         <% end %>
         <% poss.date_events.each do |date| %>
             <% datumkonflikt = konfliktdate?(@event, poss, date) %>
-            <%= date.date %> |
+            <%= date.date.strftime("%d-%m-%Y") %> |
             <% datumkonflikt.each do |konf| %>
                 Konflikt mit: <%= link_to konf.title, event_path(konf) %> |
                 <% end %><br>
