@@ -17,13 +17,9 @@ Tags: <%= @event.tag_list %>
         <% end %>
         <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li><%= link_to "Logik", event_path(date: @date, search_input: "Logik") %></li>
-        <li><%= link_to "Metaphysik", event_path(date: @date, search_input: "Metaphysik") %></li>
-        <li><%= link_to "Ethik", event_path(date: @date, search_input: "Ethik") %></li>
-        <li><%= link_to "Alle Events", event_path(date: @date, search_input: "Alle Events") %></li>
         <% @categories.each do |cat| %>
         <li><%= link_to cat.name, event_path(date: @date, search_input: cat.name.to_s) %></li>
-            <%end%>
+        <%end%>
      </ul>
     </div>
   </div></td>

@@ -27,10 +27,11 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @categories = Group.where.not(name: "Alle Events")
   end
 
   def edit
-
+    @categories = Group.where.not(name: "Alle Events")
   end
 
   def create

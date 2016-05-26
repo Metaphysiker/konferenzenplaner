@@ -18,6 +18,20 @@ footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 
+.checkbox_container {
+    display: inline-block;
+    vertical-align: -5px;
+    margin: 5px;
+}
+.checkbox_container input {
+    display: inline;
+}
+.checkbox_container .collection_check_boxes{
+    display: inline;
+    vertical-align: 5px;
+    margin-left: 5px;
+}
+
 /* unvisited link */
 a:link {
     color: #0d0000;

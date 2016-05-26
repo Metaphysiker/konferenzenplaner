@@ -1,6 +1,7 @@
 <%= simple_form_for @event do |f| %>
     <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :tag_list, as: :check_boxes, collection: ['Logik', 'Ethik', 'Metaphysik'] %><br>
+    <%= f.input :description %><br>
+    <%= f.collection_check_boxes :tag_list, @categories, :name, :name, {:item_wrapper_class => 'checkbox_container'}%><br>
     <%= f.button :submit %>
 <% end %>
+
