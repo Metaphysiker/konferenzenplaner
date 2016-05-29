@@ -50,7 +50,7 @@
                               <% if datex.date == date %>
                                   <div class="trigger">
                   <% if poss.confirmed == true %>
-                      <div class="green"%>
+                      <div class="green">
                         <%= link_to event.title, event_path(event) %>
                         <% if !current_user.nil? && event.user_id == current_user.id %>
                             <div class="smallwhite"> </div>
@@ -106,6 +106,8 @@
                       <% end %>
                   <% end %>
                 </td>
+
+
             <% else %>
                 <td>
                   <%= date.day %>
@@ -115,7 +117,7 @@
                               <% if datex.date == date %>
                                   <div class="trigger">
                                   <% if poss.confirmed == true %>
-                                      <div class="green"%>
+                                      <div class="green">
                                         <%= link_to event.title, event_path(event) %>
                                         <% if !current_user.nil? && event.user_id == current_user.id %>
                                             <div class="smallwhite"> </div>
@@ -176,7 +178,20 @@
       </tr>
   <% end %>
 </table>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 <script>
