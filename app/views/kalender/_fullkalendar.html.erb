@@ -48,7 +48,7 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
-                                  <br><div class="trigger">
+                                  <div class="trigger">
                   <% if poss.confirmed == true %>
                       <div class="green"%>
                         <%= link_to event.title, event_path(event) %>
@@ -113,7 +113,7 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
-                                  <br><div class="trigger">
+                                  <div class="trigger">
                                   <% if poss.confirmed == true %>
                                       <div class="green"%>
                                         <%= link_to event.title, event_path(event) %>
