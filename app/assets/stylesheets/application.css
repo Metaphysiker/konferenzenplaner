@@ -90,14 +90,16 @@ a:active {
 
 /* HOVER STYLES */
 div.pop-up {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
     text-align: center;
     display: none;
     position: absolute;
     width: 400px;
     padding: 10px;
-    background: #eeeeee;
-    color: #000000;
-    border: 1px solid #1a1a1a;
+    background: #c5c5c5;
+    color: #0d0000;
     font-size: 90%;
 }
 

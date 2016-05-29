@@ -10,9 +10,9 @@ module KalenderHelper
               if event != databaseevent
                 if date.date == databasedate.date
                  if allnotconfirmed?(databaseevent)
-                   konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.strftime("%d-%m-%Y").to_s)
+                   konflikte.push([databaseevent,databasedate.date])
                   elsif databaseposs.confirmed == true
-                   konflikte.push("Konflikt mit " + databaseevent.title.to_s + ": " + databasedate.date.strftime("%d-%m-%Y").to_s)
+                   konflikte.push([databaseevent,databasedate.date])
                  else
 
                  end
