@@ -109,17 +109,23 @@
                                             <div class="smallwhite"> </div>
                                         <% end %>
                                       </div>
-                                        <div class="pop-up">
-                                          <h3><%= event.title %></h3>
-                                          <%= poss.number %>. Möglichkeit<br><br>
-                                          Beschreibung: <br>
-                                          <%= event.description %><br>
-                                          <% konflikte = konflikt?(event, poss) %>
-                                          <% konflikte.each do |konflikt| %>
-                                              <%=konflikt %><br>
-                                          <% end %>
-                                          </div>
-                                          </div>
+                      <div class="pop-up">
+                        <h3><%= event.title %></h3>
+                        <%= poss.number %>. Möglichkeit<br><br>
+                        Beschreibung: <br>
+                        <%= event.description %><br><br>
+                        <% konflikte = konflikt?(event, poss) %>
+                        <table class="table table-striped table-bordered ">
+                          <% konflikte.each do |konflikt| %>
+                              <tr>
+                                <td style="text-align: left">
+                                  Konflikt mit "<%=konflikt[0].title %>":
+                                </td><td style="text-align: left"> <%= konflikt[1] %></td>
+                              </tr>
+                          <% end %>
+                        </table>
+                      </div>
+                      </div>
                                     <% elsif allnotconfirmed?(event) %>
                                       <div class="blue">
                                         <%= link_to event.title, event_path(event) %>
