@@ -42,12 +42,14 @@
       <tr>
         <% week.each do |date| %>
             <% if date.month != @date.month %>
-                <td style="background-color: gray">
+                <td style="background-color: #aeaeae">
                   <%= date.day %>
                   <% @events.each do |event| %>
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
+
+
                                   <div class="trigger">
                   <% if poss.confirmed == true %>
                       <div class="green">
@@ -115,6 +117,8 @@
                       <% event.possibilities.each do |poss| %>
                           <% poss.date_events.each do |datex| %>
                               <% if datex.date == date %>
+
+
                                   <div class="trigger">
                                   <% if poss.confirmed == true %>
                                       <div class="green">
@@ -196,24 +200,6 @@
 
 <script>
   $(document).ready(function(){
-    $("div").click(function(){
-
-      if($(this).position().left > 55) {
-        $(this).animate({left: '0px'});
-      }
-      else {
-        $(this).animate({left: '250px'});
-      }
-    });
-
-    $( ".clickme" ).click(function() {
-      $(this).children(".book").toggle( "slow", function() {
-        // Animation complete.$( "div" ).children( ".selected" ).css( "color", "blue" );
-      });
-    });
-
-
-
 
     $(function() {
       var moveLeft = -140;
