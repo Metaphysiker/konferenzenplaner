@@ -8,7 +8,7 @@ class KalenderController < ApplicationController
       @events = Event.all
     else
       #eventsresult = Event.where("name ILIKE ? OR content ILIKE ?", "%#{inputword}%", "%#{inputword}%")
-      @events = Event.tagged_with("?", "%#{params[:search_input]}%")
+      @events = Event.tagged_with(params[:search_input])
     end
 
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
